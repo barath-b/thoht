@@ -1,0 +1,470 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+a, h1, h2, h3, h4 {
+    font-family: 'Spartan', sans-serif;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    border-bottom: 1px solid #3b3b53;
+}
+
+nav {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    margin-left: 1.25em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-grow: 2;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    padding-left: 1.25em;
+}
+
+.listcon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000000ad;
+    backdrop-filter: blur(5px);
+    transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: -1;
+}
+
+.list {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+    transition: all .1s ease;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 2em;
+    flex-direction: column;
+    align-items: flex-start;
+    opacity: 0;
+}
+
+.item {
+    height: auto;
+    padding: 1.25em;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-family: 'Spartan', sans-serif;
+    font-size: 1em;
+    width: auto;
+    display: inline-block;
+    margin: 1em;
+    font-weight: 300;
+}
+
+.list a {
+    height: 100%;
+    text-decoration: none;
+    color: #fff;
+    height: auto;
+    border: none;
+}
+
+.active .list {
+    height: 100vh;
+    margin-top: 80px;
+    transition: all 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+    transition-delay: 0.15s;
+    opacity: 1;
+}
+
+.active .listcon {
+    height: 100vh;
+    background-color: #000000e0;
+}
+
+#menuClick {
+    height: 100%;
+    padding-left: 1.25em;
+    display: flex;
+    align-items: center;
+}
+
+.menuButton {
+    height: 12px;
+    width: 2em;
+    margin-right: 1.25em;
+    position: relative;
+}
+
+.menuTop, .menuBottom {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 0.12em;
+    background-color: #fff;
+    display: block;
+    transition: all 0.4s ease;
+    transform-origin: center;
+}
+
+.menuBottom {
+    top: 10px;
+}
+
+.active .menuTop {
+    transform: translate(0px, 5px) rotate(45deg);
+}
+
+.active .menuBottom {
+    transform: translate(0px, -5px) rotate(-45deg);
+}
+
+.main {
+    height: 100vh;
+    width: 100%;
+    margin-top: -80px;
+    background-image: url("../images/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.content {
+    padding-top: 75%;
+    padding-left: 20%;
+    width: 70%;
+    max-width: 900px;
+    color: #fff;
+    height: 100%;
+    text-shadow: 0px 0px 20px #000000;
+}
+
+.content h4 {
+    font-family: 'Spartan', sans-serif;
+    font-size: 0.6em;
+    font-weight: 300;
+}
+
+.content h2 {
+    font-family: 'Spartan', sans-serif;
+    padding: 0.6em 0;
+    font-size: 1.4em;
+    line-height: 1.4em;
+}
+
+.content p {
+    line-height: 1.4em;
+    font-size: 1em;
+}
+
+.downArrow {
+    width: 40px;
+    height: 40px;
+    background: url(../images/down.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    bottom: 10px;
+    left: calc(50vw - 20px);
+}
+
+/* Products */
+
+section {
+    width: 100%;
+    color: #3b3b53;
+    padding: 4em 10%;
+}
+
+.header {
+    padding-bottom: 75px;
+}
+
+.header h3 {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.line {
+    margin: 1.4em auto 2.5em;
+    width: 175px;
+    height: 1.5px;
+    background-color: #52aa54;
+}
+
+section p {
+    text-align: center;
+    font-size: 1em;
+    line-height: 1.5em;
+    color: #3b3c4e;
+}
+
+.prod {
+    padding-bottom: 60px;
+}
+
+.illus {
+    width: 40%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.illus img {
+    width: 100%;
+    max-width: 180px;
+}
+
+.desc {
+    width: 95%;
+    margin: auto;
+    text-align: center;
+    padding-top: 1.5em;
+}
+
+.desc h3 {
+    font-size: 1.3em;
+}
+
+.desc p {
+    font-size: 1em;
+    line-height: 1.6em;
+    padding: 1em 0;
+}
+
+section a {
+    color: #3b3b53;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Sample */
+
+.sample {
+    background-color: #fcfcfc;
+}
+
+.service {
+    padding: 2em 0;
+}
+
+.num {
+    border-radius: 50%;
+    border: 1px solid #52aa54;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #01a006;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: auto;
+}
+
+.card {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    background-color: #fff;
+    margin: 0 auto;
+    box-shadow: 1px 1px 10px 0px #f1f1f1;
+    border-radius: 15px;
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3em;
+}
+
+.card img {
+    height: 50px;
+    margin: auto;
+}
+
+.desc .line {
+    width: 80%;
+    margin: 1em auto 0.7em;
+    height: 1px;
+}
+
+.card p {
+    padding: 1em 0 2em;
+}
+
+.card a {
+    border: none;
+    color: #e4ab8d;
+    margin-top: 20px;
+}
+
+.arrow {
+    width: 15px;
+    height: 15px;
+    background: url(../images/arrow.png) no-repeat;
+    display: inline-block;
+    background-size: contain;
+    margin: -2px 7px;
+}
+
+.footer {
+    background-color: #303030;
+    color: #fff;
+    padding: 1.5em;
+    text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+    #menuClick, .menuButton {
+        display: none;
+    }
+    .active .listcon {
+        height: 100%;
+        transition: none;
+    }
+    .active .list, .list {
+        transition: none;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        position: unset;
+        width: auto;
+        margin: 0;
+        padding: 0;
+        flex-direction: row;
+        align-items: unset;
+        opacity: 1;
+    }
+    .item {
+        height: 100%;
+        padding: 1.25em;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        font-family: 'Spartan', sans-serif;
+        font-size: 1em;
+        margin: 0;
+    }
+    .button {
+        background-color: #009f05;
+    }
+    .content {
+        padding-top: 55vh;
+    }
+    .content h2 {
+        font-size: 1.8em;
+    }
+    .content h4 {
+        font-size: 1em;
+    }
+    .content p {
+        line-height: 1.6em;
+        font-size: 1.2em;
+    }
+    section {
+        max-width: 1500px;
+        margin: auto;
+    }
+    .prod {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 7em;
+    }
+    .prod:last-of-type {
+        padding: 0;
+    }
+    .rev {
+        flex-direction: row-reverse;
+    }
+    .illus, .desc {
+        width: 50%;
+        margin: 0;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .illus {
+        align-items: center;
+    }
+    section {
+        padding: 6em 10%;
+    }
+    .center {
+        max-width: 1000px;
+        margin: auto;
+    }
+    .services {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .service {
+        width: 50%;
+        padding: 5%;
+    }
+    .service .desc, .card .desc {
+        width: 100%;
+        align-items: flex-start;
+        text-align: left;
+    }
+    section .desc p {
+        text-align: left;
+    }
+    .num {
+        margin: 0;
+    }
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        padding: 6em 5%;
+    }
+    .card {
+        margin: 0;
+        width: 30%;
+        display: flex;
+        align-items: center;
+        padding: 5%;
+        transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    .card .desc {
+        text-align: center;
+        align-items: center;
+    }
+    .card .desc p {
+        text-align: center;
+    }
+    .card:hover {
+        transform: scale(1.1);
+        box-shadow: 1px 1px 15px 0px #d8d8d8;
+    }
+}
