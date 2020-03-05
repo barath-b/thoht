@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     width: 100%;
     font-family: 'Lato', sans-serif;
@@ -26,6 +30,7 @@ nav {
     display: flex;
     position: sticky;
     top: 0;
+    z-index: 1;
 }
 
 .logo {
@@ -157,15 +162,15 @@ nav {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 0 20% 20%;
 }
 
 .content {
-    padding-top: 75%;
-    padding-left: 20%;
     width: 70%;
-    max-width: 900px;
+    max-width: 700px;
     color: #fff;
-    height: 100%;
     text-shadow: 0px 0px 20px #000000;
 }
 
@@ -188,13 +193,13 @@ nav {
 }
 
 .downArrow {
-    width: 40px;
-    height: 40px;
-    background: url(../images/down.png) no-repeat;
-    background-size: contain;
+    width: 25px;
+    height: 25px;
     position: absolute;
     bottom: 10px;
-    left: calc(50vw - 20px);
+    left: calc(50vw - 12.5px);
+    background: url(../images/down.png) no-repeat;
+    background-size: contain;
 }
 
 /* Products */
@@ -298,7 +303,7 @@ section a {
     background-color: #fff;
     margin: 0 auto;
     box-shadow: 1px 1px 10px 0px #f1f1f1;
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 3em;
     display: flex;
     flex-direction: column;
@@ -377,8 +382,8 @@ section a {
     .button {
         background-color: #009f05;
     }
-    .content {
-        padding-top: 55vh;
+    .main {
+        padding: 0 0 10% 10%;
     }
     .content h2 {
         font-size: 1.8em;
@@ -390,8 +395,13 @@ section a {
         line-height: 1.6em;
         font-size: 1.2em;
     }
+    .downArrow {
+        width: 40px;
+        height: 40px;
+        left: calc(50vw - 20px);
+    }
     section {
-        max-width: 1500px;
+        max-width: 1280px;
         margin: auto;
     }
     .prod {
@@ -404,6 +414,7 @@ section a {
     }
     .rev {
         flex-direction: row-reverse;
+        padding: 0 10% 7em;
     }
     .illus, .desc {
         width: 50%;
@@ -419,7 +430,7 @@ section a {
         padding: 6em 10%;
     }
     .center {
-        max-width: 1000px;
+        max-width: 600px;
         margin: auto;
     }
     .services {
