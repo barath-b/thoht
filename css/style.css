@@ -5,7 +5,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
 }
 
 body {
@@ -22,6 +22,10 @@ a, h1, h2, h3, h4 {
 a {
     text-decoration: none;
     border-bottom: 1px solid #3b3b53;
+}
+
+.logo a {
+    border: none;
 }
 
 nav {
@@ -76,7 +80,6 @@ nav {
     text-align: center;
     align-items: center;
     list-style-type: none;
-    padding: 2em;
     flex-direction: column;
     align-items: flex-start;
     opacity: 0;
@@ -96,17 +99,34 @@ nav {
     font-weight: 300;
 }
 
+.item::after {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0, 0, 0.2, 1);
+}
+
 .list a {
     height: 100%;
     text-decoration: none;
     color: #fff;
     height: auto;
     border: none;
+    width: 100%;
+    text-align: left;
+    position: relative;
 }
 
 .active .list {
     height: 100vh;
     margin-top: 80px;
+    padding: 2em;
     transition: all 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
     transition-delay: 0.15s;
     opacity: 1;
@@ -207,7 +227,7 @@ nav {
 section {
     width: 100%;
     color: #3b3b53;
-    padding: 4em 10%;
+    padding: 8.5em 10% 3em;
 }
 
 .header {
@@ -379,8 +399,20 @@ section a {
         font-size: 1em;
         margin: 0;
     }
+    .list a {
+        width: auto;
+    }
     .button {
         background-color: #009f05;
+    }
+    .list a:hover>.item::after, .list a.active .item::after {
+        opacity: 1;
+    }
+    .list a:hover>.item, .list a.active .item {
+        background-color: #313131;
+    }
+    .list a:hover>.item.button, .list a.active .item.button {
+        background-color: #19b51e;
     }
     .main {
         padding: 0 0 10% 10%;
