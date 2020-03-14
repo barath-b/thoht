@@ -323,7 +323,7 @@ section a {
     background-color: #fff;
     margin: 0 auto;
     box-shadow: 1px 1px 10px 0px #f1f1f1;
-    border-radius: 10px;
+    border-radius: 3px;
     padding: 3em;
     display: flex;
     flex-direction: column;
